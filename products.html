@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>String Art Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+        </nav>
+        <div id="cart-icon" onclick="toggleCartModal()">
+            <span id="cart-count">0</span>
+            🛒
+        </div>
+    </header>
+
+    <main>
+        <h2>Available String Art</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="images/art1.jpg" alt="String Art 1">
+                <h3>Circle of Colors</h3>
+                <p>$50</p>
+                <input type="number" id="quantity-art1" min="1" value="1">
+                <button onclick="addToCart('Circle of Colors', 50, 'quantity-art1', 'images/art1.jpg')">Add to Cart</button>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/art2.jpg" alt="String Art 2">
+                <h3>Geometric Star</h3>
+                <p>$70</p>
+                <input type="number" id="quantity-art2" min="1" value="1">
+                <button onclick="addToCart('Geometric Star', 70, 'quantity-art2', 'images/art2.jpg')">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/art3.jpg" alt="String Art 3">
+                <h3>Elegant Spiral</h3>
+                <p>$60</p>
+                <input type="number" id="quantity-art3" min="1" value="1">
+                <button onclick="addToCart('Elegant Spiral', 60, 'quantity-art3', 'images/art3.jpg')">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contact us at <strong>stringartshop@example.com</strong></p>
+        <p>&copy; 2024 String Art Shop</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCartModal()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Dynamically filled -->
+            </div>
+            <button onclick="checkout()">Proceed to Checkout</button>
+            <div id="formContainer" class="form-container"></div>
+        </div>
+        
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
